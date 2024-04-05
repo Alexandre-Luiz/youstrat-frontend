@@ -6,8 +6,8 @@ import { Link, useParams } from 'react-router-dom';
 import { apiGetAllGames, apiGetGameStrategies, apiGetMapsByGame } from '../services/apiService';
 import { sortMapsArray } from '../helpers/utils';
 import Footer from '../components/Footer';
-import * as dotenv from 'dotenv';
-dotenv.config();
+// import * as dotenv from 'dotenv';
+// dotenv.config();
 
 export default function HomePage() {
   const params = useParams();
