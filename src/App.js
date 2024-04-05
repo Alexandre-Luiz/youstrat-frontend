@@ -4,7 +4,6 @@ import { getUserEndpoint } from './services/apiService';
 import { AuthContext } from './contexts/authContext';
 import HomePage from './pages/HomePage';
 import AdminDashboard from './pages/AdminDashboard';
-import LoginDialog from './components/LoginDialog';
 import LoginWrapper from './components/LoginWrapper';
 
 export default function App() {
@@ -41,11 +40,6 @@ export default function App() {
           </Route>
           {user ? <Route path="/user/:userId" element={<HomePage />} /> : null}
           <Route path="/user/login" element={<LoginWrapper />} />
-          {/* <Route
-            path="/user/login"
-            element={<LoginDialog open={openLoginDialog} handleClose={closeLoginDialog} />}
-          /> */}
-          {/* <Route path="/user/login" element={<HomePage />} /> */}
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/*" element={<HomePage />} />
         </Routes>

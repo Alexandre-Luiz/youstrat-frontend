@@ -29,7 +29,6 @@ export async function apiGetGameStrategies(game) {
 
 // ---------------- Delete endpoints --------------------
 export async function apiDeleteGameById(gameId) {
-  console.log('apiservice');
   // await axios.delete(`http://localhost:3001/game/${gameId}`, {
   await axios.delete(`https://youstrat-ef5483145ceb.herokuapp.com/game/${gameId}`, {
     withCredentials: true,
