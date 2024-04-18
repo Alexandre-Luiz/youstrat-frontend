@@ -6,8 +6,6 @@ import { Link, useParams } from 'react-router-dom';
 import { apiGetAllGames, apiGetGameStrategies, apiGetMapsByGame } from '../services/apiService';
 import { sortMapsArray } from '../helpers/utils';
 import Footer from '../components/Footer';
-// import * as dotenv from 'dotenv';
-// dotenv.config();
 
 export default function HomePage() {
   const params = useParams();
@@ -71,7 +69,7 @@ export default function HomePage() {
   }, [params.gameName]);
 
   return (
-    <div>
+    <div id="homepage">
       <Header>You Strat</Header>
       <div className="flex flex-row justify-center gap-10 mt-24 mb-10 h-full">
         {allGames.map((game) => (

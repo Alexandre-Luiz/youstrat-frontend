@@ -1,5 +1,5 @@
 // React
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 // Backend
 import signOutEndpoint from '../services/apiService';
 // Context
@@ -25,10 +25,12 @@ export default function UserMenu() {
 
   // If no user is logged in
   function handleLoginButtonClick() {
+    console.log('usermenu: handleLoginClick');
     setOpen(true);
-    navigate('/user/login');
   }
+
   function handleLoginDialogClose() {
+    console.log('usermenu: handleClose');
     setOpen(false);
     setAnchorEl(null);
     navigate('/');
@@ -48,6 +50,12 @@ export default function UserMenu() {
     onSignOut();
     navigate('/');
   }
+
+  useEffect(() => {
+    if (window.location.pathname === '/user/login') {
+      setOpen(true);
+    }
+  }, []);
 
   return (
     <>
@@ -77,16 +85,18 @@ export default function UserMenu() {
         </div>
       ) : (
         <div className="">
-          <Button
-            variant="contained"
-            className="flex flex-row justify-between shadow-lg"
-            startIcon={<PowerIcon />}
-            size="large"
-            style={{ backgroundColor: 'ThreeDDarkShadow' }}
-            onClick={handleLoginButtonClick}
-          >
-            Sign In
-          </Button>
+          <Link to={'user/login'} onClick={handleLoginButtonClick}>
+            <Button
+              variant="contained"
+              className="flex flex-row justify-between shadow-lg"
+              startIcon={<PowerIcon />}
+              size="large"
+              style={{ backgroundColor: 'ThreeDDarkShadow' }}
+              // onClick={handleLoginButtonClick}
+            >
+              Sign In
+            </Button>
+          </Link>
           <LoginDialog open={open} handleClose={handleLoginDialogClose} />
         </div>
       )}

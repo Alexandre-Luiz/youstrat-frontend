@@ -42,6 +42,8 @@ export async function apiDeleteMapById(mapId) {
 }
 export async function apiDeleteStratById(StratId, gameId) {
   // await axios.delete(`http://localhost:3001/strategies/${StratId}?gameId=${gameId}`, {
+  //   withCredentials: true,
+  // });
   await axios.delete(
     `https://youstrat-ef5483145ceb.herokuapp.com/strategies/${StratId}?gameId=${gameId}`,
     {
@@ -110,6 +112,9 @@ export async function apiNewMap(newMapData) {
   return data;
 }
 export async function apiNewCsStrat(newCsStratData) {
+  // const { data } = await axios.post(`http://localhost:3001/strategies/cs2`, newCsStratData, {
+  //   withCredentials: true,
+  // });
   const { data } = await axios.post(
     `https://youstrat-ef5483145ceb.herokuapp.com/strategies/cs2`,
     newCsStratData,
@@ -117,9 +122,6 @@ export async function apiNewCsStrat(newCsStratData) {
       withCredentials: true,
     }
   );
-  // const { data } = await axios.post(`http://localhost:3001/strategies/cs2`, newCsStratData, {
-  //   withCredentials: true,
-  // });
   return data;
 }
 

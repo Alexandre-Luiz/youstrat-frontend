@@ -4,12 +4,10 @@ import { getUserEndpoint } from './services/apiService';
 import { AuthContext } from './contexts/authContext';
 import HomePage from './pages/HomePage';
 import AdminDashboard from './pages/AdminDashboard';
-import LoginWrapper from './components/LoginWrapper';
 
 export default function App() {
   const [user, setUser] = useState(null);
 
-  // const navigate = useNavigate();
   useEffect(() => {
     (async function getUser() {
       try {
@@ -39,7 +37,7 @@ export default function App() {
             </Route>
           </Route>
           {user ? <Route path="/user/:userId" element={<HomePage />} /> : null}
-          <Route path="/user/login" element={<LoginWrapper />} />
+          <Route path="/user/login" element={<HomePage />} />
           <Route path="/dashboard" element={<AdminDashboard />} />
           <Route path="/*" element={<HomePage />} />
         </Routes>

@@ -12,6 +12,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../contexts/authContext';
 import { signInEndpoint } from '../services/apiService';
 import { useNavigate } from 'react-router-dom';
+import { createPortal } from 'react-dom';
 
 export default function LoginForm({ open, handleClose }) {
   const { onSignIn } = useContext(AuthContext);
@@ -65,7 +66,9 @@ export default function LoginForm({ open, handleClose }) {
     }
   }
 
-  return (
+  const loginDialogContainer = document.body;
+
+  return createPortal(
     <Dialog fullWidth open={open} onClose={handleClose}>
       <form onSubmit={handleFormSubmit}>
         <DialogTitle>Login</DialogTitle>
@@ -118,6 +121,7 @@ export default function LoginForm({ open, handleClose }) {
           </Button>
         </DialogActions>
       </form>
-    </Dialog>
+    </Dialog>,
+    loginDialogContainer
   );
 }

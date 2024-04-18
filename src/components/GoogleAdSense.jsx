@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import * as dotenv from 'dotenv';
-// dotenv.config();
 
 const AdsComponent = (props) => {
   const { dataAdSlot } = props;
@@ -32,7 +30,7 @@ const AdsComponent = (props) => {
     if (adBlockerDetected) {
       toast.error('Please, consider disabling your ad block to support the developer', {
         position: 'top-right',
-        autoClose: false, // Set to false to require user interaction
+        autoClose: true, // Set to false to require user interaction
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
