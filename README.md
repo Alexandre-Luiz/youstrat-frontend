@@ -1,6 +1,6 @@
 # TO DO
-- []  Change Cover storage feature to pull from an API
-- []  Pull book information based on name or ISIN code
+- [ ]  Change Cover storage feature to pull from an API
+- [ ]  Pull book information based on name or ISIN code
 
 # Personal Library App
 
