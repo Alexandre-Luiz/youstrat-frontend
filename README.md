@@ -1,6 +1,6 @@
 # [YouStrat](https://www.youstrat.com/)
 
-This app focus in compile gaming strategy videos in a intuitive way. To facilitate the content management, it was developes one admin dashboard to create, edit and delete uploaded strategies. This project should be run with the [backend project]([https://github.com/Alexandre-Luiz/personal-library-backend](https://github.com/Alexandre-Luiz/youstrat-backend)).
+This app focus in compile gaming strategy videos in a intuitive way. To facilitate the content management, it was developes one admin dashboard to create, edit and delete uploaded strategies. This project should be run with the [backend project](https://github.com/Alexandre-Luiz/personal-library-backend).
 
 ## Features
 
